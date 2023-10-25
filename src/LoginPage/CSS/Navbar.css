@@ -1,0 +1,11 @@
+.Nav{
+    color:aliceblue;
+    display: flex;
+    justify-content: end;
+    padding: 5% 5% 5% ;
+    font-size: 1.2rem;
+}
+
+.login-btn, .register-btn{
+    padding-right: 5%;
+}

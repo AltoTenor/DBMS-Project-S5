@@ -1,6 +1,6 @@
 import './App.css';
-import Left from './Left.jsx'
-import Right from './Right.jsx'
+import Left from './LoginPage/Components/Left'
+import Right from './LoginPage/Components/Right'
 
 function App() {
   return (

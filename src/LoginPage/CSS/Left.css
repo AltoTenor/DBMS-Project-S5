@@ -1,0 +1,17 @@
+.Left{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: #45BE9A;
+    /* background-image: url("../../assets/bg2.jpg"); */
+    background-repeat:no-repeat;
+    background-position-x: center;
+    height: 100%;
+    /* background-size: cover; */
+    
+    
+    background-size:80%;
+    background-image: url("../../assets/clipart.png");
+    background-position-y: center;
+
+}

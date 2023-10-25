@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import './Footer.css';
+import './../CSS/Footer.css';
 
 
 export default function Footer() {

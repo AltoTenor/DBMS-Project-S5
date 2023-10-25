@@ -1,13 +1,13 @@
 
-import './Navbar.css'
+import './../CSS/Navbar.css'
 
 export default function Navbar(){
     return(
         <div className="Nav">
-            <div className="login">
+            <div className="login-btn">
                 Login
             </div>
-            <div className="Register">
+            <div className="register-btn">
                 Register
             </div>
         </div>

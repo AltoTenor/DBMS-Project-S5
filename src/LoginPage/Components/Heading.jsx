@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import "./Heading.css"
-import logo from './assets/logo.png'
+import "./../CSS/Heading.css"
+import logo from './../../assets/nitcwhite.png'
 
 export default function Header() {
   return (
@@ -10,7 +10,7 @@ export default function Header() {
             <img id="logo" src={logo} alt='Logo' />
         </div>
         <div className="heading">
-            NITClub  <br/> and Event Manager 
+            <b> NITClub  <br/> and Event Manager </b>
         </div>
     </div>
   );
