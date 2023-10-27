@@ -1,5 +1,5 @@
 .loginmenu{
-    background-color: #145366;
+    background-color: #5f3e24;
     margin: 15% 15% 10% 15%;
     height: 55vh;
     border-radius: 2%;
@@ -32,8 +32,8 @@
     width: 100%;
     height: 2rem;
     border-radius: 2px;
-    background-color: #0E3541;
-    color: #fff;
+    background-color: #B6AB9A;
+    color: #000;
     border: 1.2px solid black;
     padding: 1px 1px 1px 9px;
     margin: 0 0 15px 0;
@@ -42,7 +42,6 @@
 }
 
 .loginmenu--text-input:focus{
-    outline: solid 1px rgb(223, 152, 98);
     outline: solid 1px #fff;
 }
 
@@ -55,13 +54,14 @@
     outline: solid 1px #0E3541;
     border:none;
     border-radius: 5px;
-    background-color: #45BE9A;
-    color:beige;
+    background-color: #b77d26;
+    color:#000;
     box-shadow: 2px 2px 0px 0px black;
 
 }
 
 .submitBtn:active{
+    background-color: #654514;
     box-shadow: 2px 2px 0px 0px black;
     box-shadow: inset 1px 1px 0px 0px black;
 

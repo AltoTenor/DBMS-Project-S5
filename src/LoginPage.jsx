@@ -1,10 +1,12 @@
-import './App.css';
+import './LoginPage.css';
 import Left from './LoginPage/Components/Left'
 import Right from './LoginPage/Components/Right'
 
-function App() {
+
+
+function LoginPage() {
   return (
-    <div className="App">
+    <div className="LoginPage">
         <div className="leftApp">
             <Left/>
         </div>
@@ -15,4 +17,4 @@ function App() {
   );
 }
 
-export default App;
+export default LoginPage;
