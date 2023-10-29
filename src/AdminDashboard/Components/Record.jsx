@@ -35,7 +35,7 @@ export default function Record(){
                     </div>
                 ))
             }
-
+            <button className='Report_Button' type='submit'  > Generate Report  </button>
 
         </div>
     )

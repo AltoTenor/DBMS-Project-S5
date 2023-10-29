@@ -21,7 +21,7 @@ export default function LoginMenu(){
 
     function handleSuccessLogin(tk){
         setToken(tk);
-        navigate("/home", { replace: true });
+        navigate("/dashboard", { replace: true });
     };
 
 
@@ -40,6 +40,10 @@ export default function LoginMenu(){
         .then((response) => {
             console.log(response.status, response.data.token);
             handleSuccessLogin(response.data.token);
+        }
+        ,(r)=>{
+            console.log(r);
+            alert("Invalid Login");
         });
     }
 

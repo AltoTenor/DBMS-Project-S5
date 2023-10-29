@@ -1,10 +1,11 @@
 import './../CSS/Events.css'
 import CardTwo from './Card2'
-import testimage3 from "../../assets/kp.jpg"
-import testimage1 from "../../assets/bg1.jpg"
+import testimage1 from "../../assets/bg.jpg"
 import testimage2 from "../../assets/fossmeet.jpeg"
+import testimage3 from "../../assets/kp.jpg"
 import testimage4 from "../../assets/hk.jpg"
-import testimage5 from "../../assets/fossmeet.jpeg"
+import testimage5 from "../../assets/ft.jpg"
+import testimage6 from "../../assets/tv.jpg"
 
 
 
@@ -98,7 +99,7 @@ export default function Events(){
             Club: "Computer Science & Engg", EventName: "Web Development Workshop", Date: "05/12/2023", Time: "3 PM", Venue: "Room 203", Reg_Fee: "$50", Image: testimage3
         },
         {
-            Club: "Computer Science & Engg", EventName: "AI and Machine Learning Seminar", Date: "20/01/2024", Time: "10 AM", Venue: "Lecture Hall A", Reg_Fee: "Free"
+            Club: "Computer Science & Engg", EventName: "AI and Machine Learning Seminar", Date: "20/01/2024", Time: "10 AM", Venue: "Lecture Hall A", Reg_Fee: "Free", Image: testimage5
         },
         {
             Club: "Computer Science & Engg", EventName: "Game Dev Workshop", Date: "18/02/2024", Time: "2 PM", Venue: "Game Lab", Reg_Fee: "$75"
@@ -110,13 +111,13 @@ export default function Events(){
             Club: "Computer Science & Engg", EventName: "Data Science Symposium", Date: "12/04/2024", Time: "10:30 AM", Venue: "Data Science Auditorium", Reg_Fee: "$50"
         },
         {
-            Club: "Computer Science & Engg", EventName: "Mobile App Development Workshop", Date: "25/05/2024", Time: "3 PM", Venue: "Mobile Lab", Reg_Fee: "$60"
+            Club: "Computer Science & Engg", EventName: "Mobile App Development Workshop", Date: "25/05/2024", Time: "3 PM", Venue: "Mobile Lab", Reg_Fee: "$60", Image: testimage1
         },
         {
-            Club: "Computer Science & Engg", EventName: "Robotics Competition", Date: "14/06/2024", Time: "1 PM", Venue: "Robotics Arena", Reg_Fee: "$80"
+            Club: "Computer Science & Engg", EventName: "Robotics Competition", Date: "14/06/2024", Time: "1 PM", Venue: "Robotics Arena", Reg_Fee: "$80", Image: testimage6
         },
         {
-            Club: "Computer Science & Engg", EventName: "Blockchain Seminar", Date: "22/07/2024", Time: "4 PM", Venue: "Blockchain Lab", Reg_Fee: "$70"
+            Club: "Computer Science & Engg", EventName: "Blockchain Seminar", Date: "22/07/2024", Time: "4 PM", Venue: "Blockchain Lab", Reg_Fee: "$70", Image: testimage6,
         },
         {
             Club: "Computer Science & Engg", EventName: "Data Analytics Workshop", Date: "05/08/2024", Time: "2:30 PM", Venue: "Analytics Lab", Reg_Fee: "$55", Image: testimage1

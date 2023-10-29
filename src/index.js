@@ -17,16 +17,20 @@ import { ProtectedRoute } from './Auth/ProtectecRoute'
 
 
 // Define public routes accessible to all users
-// const routesForPublic = [
-//     {
-    //         path: "/service",
-    //         element: <div>Service Page</div>,
-    //     },
-    //     {
-        //         path: "/about-us",
-        //         element: <div>About Us</div>,
-        //     },
-        // ];
+const routesForPublic = [
+        {
+            path: "/register",
+            element: <RegPage/>,
+        },
+        {
+            path: "/login",
+            element: <LoginPage/>,
+        },
+        {
+            path: "/about-us",
+            element: <div>About Us</div>,
+        },
+    ];
         
         
         
@@ -40,37 +44,32 @@ function ProtectedRouterProvider(){
             element: <ProtectedRoute />, // Wrap the component in ProtectedRoute
             children: [
                 {
-                path: "/",
+                path: "/dashboard",
                 element: <UserDashboard/>,
                 },
                 {
+                    path: "/admin-dashboard",
+                    element: <AdminDashboard/>,
+                },
+                {
                 path: "/logout",
-                element: <div>Logout</div>,
+                element: <Logout/>,
                 },
             ],
         },
     ];
     
-    const routesForNotAuthenticatedOnly = [
-        {
-          path: "/",
-          element: <div>Home Page</div>,
-        },
-        {
-        path: "/login",
-          element: <LoginPage/>,
-        //   element: <div>Login Page</div>,
-        },
-        {
-        path: "/logout",
-        //   element: <LoginPage/>,
-          element: <Logout/>,
-        },
-    ];
+    // const routesForNotAuthenticatedOnly = [
+    //     {
+    //     path: "/login",
+    //       element: <LoginPage/>,
+    //     //   element: <div>Login Page</div>,
+    //     },
+    // ];
     
     const router = createBrowserRouter([
-        // ...routesForPublic,
-        ...(!token ? routesForNotAuthenticatedOnly : []),
+        ...routesForPublic,
+        // ...(!token ? routesForNotAuthenticatedOnly : []),
         ...routesForAuthenticatedOnly,
     ]);
     return(

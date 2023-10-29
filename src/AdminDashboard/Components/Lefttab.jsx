@@ -1,7 +1,7 @@
 import './../CSS/Lefttab.css'
 import logo_black from '../../assets/logo.png'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faCalendarPlus,faCalendarDays,faCirclePlus } from '@fortawesome/free-solid-svg-icons'
+import { faCalendarPlus,faCalendarDays,faFileCirclePlus,faPenToSquare } from '@fortawesome/free-solid-svg-icons'
 
 export default function Lefttab({tabNumber, setTabNumber}){
 
@@ -33,9 +33,19 @@ export default function Lefttab({tabNumber, setTabNumber}){
                 <div className="item item-5"   onClick={()=>setTabNumber(3)}> 
                     {
                         (tabNumber == 3)?
-                            <FontAwesomeIcon icon={faCirclePlus} size="2xl" style={{color: "#ddd",}} />
+                            <FontAwesomeIcon icon={faFileCirclePlus} size="2xl" style={{color: "#ddd",}} />
                             :
-                            <FontAwesomeIcon icon={faCirclePlus} size="2xl"   />
+                            <FontAwesomeIcon icon={faFileCirclePlus} size="2xl"   />
+                    }
+                     
+                </div>
+
+                <div className="item item-5"   onClick={()=>setTabNumber(4)}> 
+                    {
+                        (tabNumber ==4 )?
+                            <FontAwesomeIcon icon={faPenToSquare} size="2xl" style={{color: "#ddd",}} />
+                            :
+                            <FontAwesomeIcon icon={faPenToSquare} size="2xl"   />
                     }
                      
                 </div>

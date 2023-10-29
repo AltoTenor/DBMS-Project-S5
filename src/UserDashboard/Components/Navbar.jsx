@@ -11,7 +11,7 @@ export default function Navbar(){
                 <input defaultValue = {"Search"}></input>
                 <FontAwesomeIcon size='lg' icon={faMagnifyingGlass} />
             </div>
-            <Link to={`/login`} relative='route' className="logout" >Logout</Link>
+            <Link to={`/logout`} relative='route' className="logout" >Logout</Link>
         </div>
     )
 }

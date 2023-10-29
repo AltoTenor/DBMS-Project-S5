@@ -1,9 +1,11 @@
 import './../CSS/Events.css'
 import CardTwo from './Card2'
-import testimage3 from "../../assets/kp.jpg"
 import testimage1 from "../../assets/bg.jpg"
 import testimage2 from "../../assets/fossmeet.jpeg"
+import testimage3 from "../../assets/kp.jpg"
 import testimage4 from "../../assets/hk.jpg"
+import testimage5 from "../../assets/ft.jpg"
+import testimage6 from "../../assets/tv.jpg"
 import { useState } from 'react'
 
 
@@ -67,6 +69,7 @@ export default function Events(){
             EventName: "Data Visualization Seminar",
             Date: "21/09/2023",
             Time: "2:30 PM",
+            Image: testimage5,
             Venue: "Visualization Room",
         },
         {
@@ -85,7 +88,6 @@ export default function Events(){
             Date: "28/01/2024",
             Time: "11 AM",
             Venue: "HealthTech Center",
-            Image: testimage1
         },
         {
             Club: "Data Science Society",
@@ -103,7 +105,6 @@ export default function Events(){
             Reg_Fee: 300,
             Time: "10 AM",
             Venue: "Deep Learning Lab",
-            Image: testimage2
         },
         {
             Reg_Fee: 300,
@@ -111,11 +112,13 @@ export default function Events(){
             EventName: "Data Analytics Challenge",
             Date: "22/06/2024",
             Time: "1 PM",
+            Image: testimage5,
             Venue: "Analytics Arena",
         },
         {
             Club: "Data Science Society",
             EventName: "AI Ethics Seminar",
+            Image: testimage6,
             Date: "19/08/2024",
             Time: "3 PM",
             Reg_Fee: 300,
@@ -128,7 +131,6 @@ export default function Events(){
             Date: "04/10/2024",
             Time: "9:30 AM",
             Venue: "ML Expo Center",
-            Image: testimage2
         }
         
         

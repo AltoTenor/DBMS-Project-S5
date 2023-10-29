@@ -14,7 +14,7 @@ function BlockOfEvents(){
 
 
     const [event,setEvent] = useState({
-        event_name:"",
+        event_id:"",
         event_date:"",
         event_time:"",
         event_venue:"",
@@ -60,15 +60,15 @@ function BlockOfEvents(){
     return( 
         <form className="white-add" >
             <div className="eventadd-box">
-                <label className="eventadd-label" htmlFor='Ename'> Event Name</label>
+                <label className="eventadd-label" htmlFor='Eid'>Event ID  </label>
                 <input 
                     type="text" 
-                    className={`eventadd-input ${(event.event_name==="")?"":(isMinLength(event.event_name))?"eventadd-input-dirty":"eventadd-input-invalid"}  `}
-                    name='event_name' 
-                     id="Ename" 
-                      onChange={handleChange} 
-                      value = {event.event_name} 
-                />
+                    className={`eventadd-input ${(event.event_id==="")?"":(!isNaN(event.event_id))?"eventadd-input-dirty":"eventadd-input-invalid"}  `}
+                    name='event_id' 
+                    id="Eid" 
+                    onChange={handleChange} 
+                    value = {event.event_id} 
+            />
             </div>
             <div className="eventadd-box">
                 <label className="eventadd-label" htmlFor='Edate'>Event Date (Eg: DD/MM/YYYY) </label>
@@ -136,10 +136,10 @@ export default function AddEvent(){
     return(
         <div className="Events">
             <div className="events-heading">
-                Add an Event 
+                Update Event 
             </div>
             <div className="events-desc">
-                Prepare for an unforgettable event filled with entertainment, networking, and more!
+                Want to make some updates?
             </div>
             <BlockOfEvents />
         </div>

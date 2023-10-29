@@ -35,3 +35,20 @@
     opacity: 0.6;
 }
 
+
+.Report_Button{
+    border: none;
+    margin-left: 5%;
+    background-color: var(--offred);
+    padding: .6%;
+    border-radius: 5px;
+    box-shadow: rgba(214, 30, 30, 0.65) 0px 2px 4px 0px;
+    border:solid 1px darkred;
+}
+
+
+
+.Report_Button:active{
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+    
+}
