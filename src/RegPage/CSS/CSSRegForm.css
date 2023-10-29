@@ -1,0 +1,97 @@
+.InputFields-Black{
+    overflow-y: scroll;
+    padding: 5% 5% 0 5%;
+    color: Black;
+}
+
+.InputFields-White{
+    overflow-y: scroll;
+    padding: 5% 5% 0 5%;
+    color: rgba(255, 255, 255, 0.795);
+}
+
+
+.regmenu--heading-black{
+    font-size: 1.5rem;
+    color:#2e2e2e;
+}
+
+.regmenu--heading-white{
+    font-size: 1.5rem;
+    color:#ffffff;
+}
+
+.regmenu--desc{
+    padding-top: 2%;
+    padding-bottom: 5%;
+    font-size: 1rem;
+}
+
+.regmenu--text{
+    padding: 0% 0 4% 0;
+    font-size: 1.2rem;
+}
+
+.regmenu--text-input{
+    font-size: 1.1rem;
+    width: 95%;
+    height: 2rem;
+    border-radius: 2px;
+    background-color: var(--bgblue);
+    color: #fff;
+    border: 1.2px solid black;
+    padding: 1px 1px 1px 9px;
+    margin: 10px 0px 15px 0;
+    box-shadow: 0.5px 0.5px 0px 0px black;
+
+}
+
+
+.regmenu--file-input{
+    font-size: 1.1rem;
+    width: 95%;
+    height: 2rem;
+    border-radius: 2px;
+    color: rgba(255, 255, 255, 0.795);
+    padding: 1px 1px 1px 0px;
+    margin: 10px 0px 15px 0;
+}
+
+
+.regmenu--text-input:focus{
+    outline: solid 1px #fff;
+}
+
+.submitBtn{
+    margin-top: 5%;
+    width: 40%;
+    height: 5vh;
+    font-size: 18px;
+    outline: solid 1px var(--submitgreen);
+    border:none;
+    border-radius: 5px;
+    color:#000;
+    box-shadow: 2px 2px 0px 0px black;
+}
+
+.submitBtn--green{
+    background-color: var(--submitgreen);
+}
+
+.submitBtn--blue{
+    background-color: var(--bgblue);
+    color:#fff;
+}
+
+.submitBtn:active{
+    background-color: #175c4e;
+    box-shadow: 2px 2px 0px 0px black;
+    box-shadow: inset 1px 1px 0px 0px black;
+
+}
+
+.btndiv{    
+    padding-bottom: 15%;
+    display: flex;
+    justify-content: center;
+}

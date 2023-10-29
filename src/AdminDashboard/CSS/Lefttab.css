@@ -1,0 +1,40 @@
+.Lefttab{
+    background-color: rgba(55, 150, 131, 1);
+    margin-right: 15%;
+    border-radius: 0 15px 15px 0 ;
+    grid-area: left;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+.item{
+    margin-top: 20%;
+    margin-bottom: 20%;
+}
+
+
+
+.item-1{
+    height: 6%;
+}
+
+.item-2{
+    width: 50%;
+    height: 1%;
+    border-bottom: black solid 2px;
+    margin-bottom:20% ;
+}
+
+.item-3:hover{
+    color:var(--offgreen);
+}
+
+.item-4:hover{
+    color:var(--offgreen);
+}
+
+.item-5:hover{
+    color:var(--offgreen);
+}

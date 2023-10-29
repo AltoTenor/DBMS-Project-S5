@@ -1,0 +1,168 @@
+@import url('https://fonts.googleapis.com/css2?family=Inknut+Antiqua:wght@600&display=swap');
+
+.card{
+    background-color: whitesmoke;
+    border-radius: 10px;
+    display: grid;
+    grid-template-columns: 210fr 120fr;
+    margin-bottom: 15%;
+    box-shadow: 1px 2px 3px 3px rgba(20,20,20,0.2);
+}
+
+.card-w-img{
+    grid-template-rows: auto 1fr 50px 50px 50px ;
+    grid-template-areas:
+    "img img"
+    "eventname regfee"
+    "venue regfee"
+    "time regfee"
+    "cname cname"
+    ;
+}
+
+.card-wo-img{
+    grid-template-rows:minmax(100px,30fr) 14fr 14fr 15fr ;
+    grid-template-areas:
+    "eventname regfee"
+    "venue regfee"
+    "time regfee"
+    "cname cname"
+    ;
+}
+
+.eventname{
+    grid-area: eventname;
+    font-size: 1.1vw;
+    font-family: 'Inknut Antiqua', serif;
+    display: flex;
+    height: fit-content;
+    padding-left: 15%;
+    align-items: center;
+    line-height: 140%;
+    margin-top: 10%;
+    margin-bottom: 10%;
+}
+
+.eventvenue{
+    grid-area: venue;
+    padding-left: 15%;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    font-size: 1.1vw;
+    white-space: nowrap;
+    height: fit-content;
+    opacity: 0.6;
+    overflow: hidden;
+
+}
+
+
+.eventtime{
+    grid-area: time;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    font-size: 16px;
+    color:#000;
+    font-size: 1.1vw;
+    height: fit-content;
+    padding-left: 15%;
+    white-space: nowrap;
+}
+
+.eventregfee-paid{
+    grid-area: regfee;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 10%;
+    padding-bottom: 10%;
+    font-size: 20px;
+    font-size: 1.3vw;
+    background-color: var(--checkblue);
+    margin: 15px;
+    border-radius: 10px;
+    
+    height: fit-content;
+}
+
+.eventregfee-notpaid{
+    grid-area: regfee;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 10%;
+    padding-bottom: 10%;
+    font-size: 20px;
+    font-size: 1.3vw;
+    background-color: var(--offred);
+    margin: 15px;
+    border-radius: 10px;
+    height: fit-content;
+    box-shadow: rgba(6, 24, 44, 0.4) 0px 0px 4px 2px, rgba(6, 24, 44, 0.65) 0px 2px 4px -1px, rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
+}
+
+.eventregfee-notpaid:hover{
+    background-color: var(--submitred);
+    color:white;
+}
+
+.eventregfee-notpaid:active{
+    background-color: var(--submitred);
+    color:white;
+
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+}
+
+.dollar{
+    color:black;
+}
+
+.eventregfee-notpaid:active,:hover>.dollar{
+    color:white;
+
+}
+
+
+.clubname{
+    padding-top: 10px;
+    text-align: center;
+    grid-area: cname;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    border-radius: 0 0 10px 10px;
+}
+
+.clubname-green{
+    background-color: var(--checkgreen);
+}
+
+.clubname-blue{
+    background-color: var(--cnameblue);
+}
+
+
+.clubname-red{
+    background-color: var(--cnamered);
+}
+
+
+.clubname-purple{
+    background-color: var(--cnamepurple);
+}
+
+
+
+.eventimage{
+    grid-area: img;
+    height: 100%;
+    width: 100%;
+    border-radius: 10px 10px 0 0;
+
+}
+
+

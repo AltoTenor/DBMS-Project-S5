@@ -1,0 +1,41 @@
+.Navbar{
+    grid-area: nav;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.search{
+    padding-left: 5%;
+    display: flex;
+    opacity: 0.4;
+    margin-top: 1%;
+}
+
+.search>input{
+    background-color: var(--submitgreen);
+    font-size: 1.1rem;
+    border: none;
+    border-radius: 10px ;
+    margin-right: 5%;
+    padding-left: 5%;
+}
+
+.logout{
+    text-decoration: none;
+    color: black;
+    padding-right:10%;
+    font-size:1.15rem;
+}
+
+.white{
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    grid-template-rows: auto;
+}
+
+[class^="col"]{
+    align-items: flex-start;
+    height: max-content;
+    margin: 5%;
+}

@@ -1,0 +1,22 @@
+.head{
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    height: 10%;
+    padding: 5% 0% 5%;
+}
+
+#logo{
+    
+    height:100%;
+}
+
+.heading{
+    text-align: left;
+    font-size: 30px;
+    padding-left: 3%;
+    display: flex;
+    color: white;
+    align-items: center;
+    justify-content: center;
+}

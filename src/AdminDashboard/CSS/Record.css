@@ -1,0 +1,37 @@
+.Record{
+    display: flex;
+    align-items: center;
+    background-color: whitesmoke;
+    margin: 1% 1% 1% 0;
+    border-radius: 10px 10px 2px 2px;
+    overflow: auto;
+    white-space: nowrap;
+    padding-left: 2%;
+}
+
+.clubLogo{
+    height: 70px;
+}
+
+[class^="field"]{
+    padding-left:3%;
+}
+
+.value{
+    color: var(--colors-black-100, #000);
+
+    /* H2 */
+    font-size: 22px;
+    font-style: normal;
+    font-weight: 500;
+}
+
+.key{
+    color: var(--colors-black-100, #000);
+
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 20px; /* 142.857% */
+    opacity: 0.6;
+}
+

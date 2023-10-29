@@ -1,0 +1,28 @@
+.Events{
+    grid-area: events;
+    padding: 1%;
+    padding-left: 0;
+    margin: 0 1% 0 0;
+}
+
+.events-heading{
+    font-size: 1.5rem;
+    padding-left: 1%;
+
+}
+
+.events-desc{
+    padding-top: 0.5%;
+    padding-bottom: 0.8%;
+    padding-left: 1%;
+    font-size: 0.8rem;
+}
+
+.white{
+    background-color: #dfdfdf88;
+    height: 90vh;
+    border-radius: 10px;
+    overflow-y: scroll;
+    padding: 0.4%;
+
+}

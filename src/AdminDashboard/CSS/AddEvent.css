@@ -1,0 +1,92 @@
+.Events{
+    grid-area: events;
+    padding: 1%;
+    padding-left: 0;
+    margin: 0 1% 0 0;
+}
+
+.events-heading{
+    font-size: 1.5rem;
+    padding-left: 1%;
+
+}
+
+.events-desc{
+    padding-top: 0.5%;
+    padding-bottom: 0.8%;
+    padding-left: 1%;
+    font-size: 0.8rem;
+}
+
+.white-add{
+    background-color: #dfdfdf88;
+    border-radius: 10px;
+    overflow-y: scroll;
+    padding: 0.4%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+
+.eventadd-box{
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    padding-block: 3%;
+    padding-left: 5%;
+}
+
+.eventadd-label{
+    padding-left: 1%;
+    padding-bottom: 2%;
+    font-size: 1.3rem;
+}
+
+.eventadd-input{
+    padding-left: 2%;
+    width: 90%;
+    border: none;
+    font-size: 1.3rem;
+    height: 2rem;
+    border-radius: 10px;
+}
+
+.eventadd-input-invalid{
+    background-color: var(--offgreen);
+}
+
+.addEventBtn{
+    color:white;
+    grid-column-start: 1;
+    grid-column-end: 3;
+    width: 250px;
+    font-size:1.3rem;
+    align-self: center;
+    justify-self: center;
+    padding-block: 0.6%;
+    border: none;
+    border-radius: 7px;
+    margin-block: 40px;
+    background-color: var(--submitgreen);
+    outline: solid 1px var(--submitgreen);
+
+}
+
+/* .addEventBtn{
+    margin-top: 5%;
+    align-self: center;
+    width: 40%;
+    height: 10%;
+    font-size: 18px;
+    border:none;
+    border-radius: 5px;
+    color:#000;
+
+}
+*/
+.addEventBtn:active{
+    background-color: #4c804978;
+    box-shadow: 2px 2px 0px 0px black;
+    box-shadow: inset 1px 1px 0px 0px black;
+
+} 

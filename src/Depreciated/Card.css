@@ -1,0 +1,114 @@
+.card{
+    background-color: whitesmoke;
+    border-radius: 10px;
+    display: grid;
+    grid-template-columns: 14fr 12fr;
+    margin-bottom: 15%;
+    box-shadow: 1px 2px 3px 3px rgba(20,20,20,0.2);
+}
+
+.card-w-img{
+    grid-template-rows: 50px 1fr 50px 70px 65px;
+    grid-template-areas:
+    "cname cname"
+    "img img"
+    "eventname regfee"
+    "venue regfee"
+    "time date"
+    ;
+}
+
+.card-wo-img{
+    grid-template-rows: 50px 50px 70px 65px;
+    grid-template-areas:
+    "cname cname"
+    "eventname regfee"
+    "venue regfee"
+    "time date"
+    ;
+}
+
+
+
+.clubname{
+    text-align: center;
+    grid-area: cname;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    padding-top: 10px;
+    /* white-space: nowrap; */
+    /* overflow: hidden;
+    margin: 0 2% 0 2%;
+    text-overflow: ".."; */
+}
+
+.clubnamehigh{
+    padding-inline: 2%;
+    padding-block: 1%;
+    border-radius: 5px;
+    background-color: #DAD7FE;
+    margin-bottom: 10px;
+
+}
+
+.eventimage{
+    grid-area: img;
+    /* background-color: yellow; */
+    width: 100%;
+    overflow-y: hidden;
+}
+
+.eventname{
+    grid-area: eventname;
+    display: flex;
+    justify-content: start;
+    padding-left: 15%;
+    align-items: end;
+    font-size: 22px;
+}
+
+.eventvenue{
+    grid-area: venue;
+    display: flex;
+    justify-content: start;
+    padding-left: 15%;
+    align-items: start;
+    font-size: 16px;
+    opacity: 0.6;
+
+}
+
+.eventdate{
+    grid-area: date;
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    font-size: 18px;
+    color:#4339F2;
+}
+
+.eventtime{
+    grid-area: time;
+    display: flex;
+    justify-content: start;
+    padding-left: 15%;
+    align-items: start;
+    font-size: 18px;
+    color:#4339F2;
+}
+
+.eventregfee{
+    grid-area: regfee;
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    padding-top: 10%;
+    font-size: 20px;
+}
+
+.regfeehigh{
+    background-color: #FFE5D3;
+    padding:5%;
+    border-radius: 10px;
+}

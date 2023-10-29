@@ -1,5 +1,4 @@
 .Nav{
-    color:#5f3e24;
     display: flex;
     justify-content: end;
     padding: 5% 5% 5% ;
@@ -9,6 +8,6 @@
 .login-btn, .register-btn{
     text-decoration: none;
     text-decoration: solid;
-    color: #5f3e24;
+    color: #fff;
     padding-right: 5%;
 }

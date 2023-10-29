@@ -1,3 +1,31 @@
+:root{
+    --bgblue: #0E3541;
+    --menulightblue: #19647a;
+    --offwhite: #C1BBBB;
+    --submitgreen: #379683;
+    --darkgreen: #297164;
+    --offgreen: #6bbdad;
+    --menulightblue: #19647a;
+    --offblue: #57adc8;
+    --cnameblue: #57aec89b;
+    --cnamered: #dc5b846f;
+    --submitred: #9b2f2f;
+    --offred: #cf444498;
+    --cnamepurple: #aa65d86f;
+    --dashboardbg: rgb(55,150,131,0.26);
+    --checkgreen: #70c7ed;
+    --checkblue: rgba(112, 206, 237, 0.375);
+    
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Syne:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato&family=Syne:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato&family=Nunito+Sans:opsz,wght@6..12,600&family=Syne:wght@500&display=swap');
+
+*{
+    font-family: 'Nunito Sans', sans-serif;
+}
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -10,4 +38,31 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+
+/* width */
+::-webkit-scrollbar {
+    height: 6px;
+    width: 5px;
+    border-radius: 10px;
+}
+  
+  /* Track */
+::-webkit-scrollbar-track {
+    background: transparent;
+
+}
+  
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #888;
+
+    border-radius: 8px;
+    background-clip: padding-box;  
+}
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #555;
 }

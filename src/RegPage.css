@@ -1,0 +1,18 @@
+.regApp{
+    display: flex;
+
+}
+
+.rightApp{
+    background-color: var(--bgblue);
+    height: 100vh;
+    width: 50%;
+    flex-basis: 45%;
+}
+
+.leftApp{
+    background-color: pink;
+    height: 100vh;
+    width: 50%;
+    flex-basis: 55%;
+}

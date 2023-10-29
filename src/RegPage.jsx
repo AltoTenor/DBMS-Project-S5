@@ -1,12 +1,19 @@
-
+import './RegPage.css';
+import Left from './RegPage/Components/Left'
+import Right from './RegPage/Components/Right'
 
 
 
 function RegPage() {
   return (
-    <>
-        HI
-    </>
+    <div className = 'regApp'>
+        <div className="leftApp">
+            <Left/>
+        </div>
+        <div className="rightApp">
+            <Right/>
+        </div>
+    </div>
   );
 }
 

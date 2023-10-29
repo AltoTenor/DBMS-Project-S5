@@ -1,6 +1,6 @@
 .loginmenu{
-    background-color: #5f3e24;
-    margin: 15% 15% 10% 15%;
+    background-color: var(--menulightblue);
+    margin: 10% 15% 10% 15%;
     height: 55vh;
     border-radius: 2%;
     display: flex;
@@ -24,7 +24,7 @@
 .loginmenu--text{
     padding: 0% 0 4% 0;
     font-size: 1.2rem;
-    color: #C1BBBB;
+    color: var(--offwhite);
 }
 
 .loginmenu--text-input{
@@ -32,14 +32,16 @@
     width: 100%;
     height: 2rem;
     border-radius: 2px;
-    background-color: #B6AB9A;
-    color: #000;
+    background-color: var(--bgblue);
+    color: #fff;
     border: 1.2px solid black;
     padding: 1px 1px 1px 9px;
     margin: 0 0 15px 0;
     box-shadow: 0.5px 0.5px 0px 0px black;
 
 }
+
+
 
 .loginmenu--text-input:focus{
     outline: solid 1px #fff;
@@ -51,17 +53,17 @@
     width: 40%;
     height: 10%;
     font-size: 18px;
-    outline: solid 1px #0E3541;
+    outline: solid 1px var(--submitgreen);
     border:none;
     border-radius: 5px;
-    background-color: #b77d26;
+    background-color: var(--submitgreen);
     color:#000;
     box-shadow: 2px 2px 0px 0px black;
 
 }
 
 .submitBtn:active{
-    background-color: #654514;
+    background-color: #175c4e;
     box-shadow: 2px 2px 0px 0px black;
     box-shadow: inset 1px 1px 0px 0px black;
 

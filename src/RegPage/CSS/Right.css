@@ -1,0 +1,9 @@
+.Right{
+    display: flex;
+    flex-direction: column;
+}
+
+
+.right--navbar{
+    justify-self: start;
+}
