@@ -4,13 +4,16 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCalendarPlus,faCalendarDays } from '@fortawesome/free-solid-svg-icons'
 
 export default function Lefttab({tabNumber, setTabNumber}){
-
+        let width = window.innerWidth;
     
         return(
             <div className="Lefttab">
-                <img className="item item-1"  src={logo_black}/>
-    
-                <div className="item item-2" >  </div>
+                {
+                    (width > 768) &&<>
+                    <img className="item item-1"  src={logo_black}/>
+                    <div className="item item-2" >  </div>
+                    </>
+                }
     
                 <div className="item item-3"  onClick={()=>setTabNumber(1)} > 
                     {

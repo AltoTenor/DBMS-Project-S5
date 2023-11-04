@@ -1,24 +1,79 @@
 import './../CSS/Events.css'
 import CardTwo from './Card2'
-import testimage1 from "../../assets/bg.jpg"
-import testimage2 from "../../assets/fossmeet.jpeg"
-import testimage3 from "../../assets/kp.jpg"
-import testimage4 from "../../assets/hk.jpg"
-import testimage5 from "../../assets/ft.jpg"
-import testimage6 from "../../assets/tv.jpg"
-import { useState } from 'react'
+import { useState, useEffect } from 'react';
+import axios from 'axios'
+import { useAuth } from '../../Auth/authProvider'
 
 
 
-
-function BlockOfEvents({arr}){
+function BlockOfEvents(){
     // console.log(arr);
 
     const [regClick,setRegClick] = useState(0);
+    const { token } = useAuth();
+    const [arr,setArr] = useState([]);
+    const [objs,setObjs] = useState({});
+
+
+    
+
+
+    useEffect( ()=>{
+        // console.log(token);
+        axios.get("https://nitclub-backend--arshiyahafis.repl.co/upcoming-events/"
+        ,{
+            headers:{"Authorization" : `token ${token}`}
+        }
+        )
+        .then( (r)=>{
+            // console.log(r);
+            setArr(r.data.map( (obj)=>({
+                    Id:obj.event_id,
+                    Club: obj.event_club,
+                    EventName: obj.event_name,
+                    Date: obj.event_date,
+                    Time: obj.event_time,
+                    Reg_Fee: obj.event_regfee,
+                    Venue: obj.event_venue,
+                    Image: obj.event_image,
+                })
+            ))
+        } )
+        .catch((e)=>{
+            console.log(e);
+        }) },[]
+    )
 
     function handleRegistration(i){
         setRegClick(i);
-        alert("Registered For " + i);
+
+
+        axios.get("https://nitclub-backend--arshiyahafis.repl.co/profile/"
+        ,{
+            headers:{"Authorization" : `token ${token}`}
+        }
+        )
+        .then( (r)=>{
+            console.log(r.data.roll_number);
+            axios.post("https://nitclub-backend--arshiyahafis.repl.co/registrations/",
+                {
+                    event_id:arr[i].Id,
+                    student_id:r.data.roll_number,
+                },
+                {
+                    headers:{"Authorization" : `token ${token}`}
+                }
+            ).then(r=>{
+                console.log(r.status);
+                alert("Registered");
+            })
+            .catch( e => {alert("Already Registered")})
+        } )
+        .catch((e)=>{
+            console.log(e);
+        }) 
+
+        
     }
 
 
@@ -43,99 +98,7 @@ function BlockOfEvents({arr}){
 
 export default function Events(){
 
-
-    let arr = [
-        {
-            Club: "Data Science Society",
-            EventName: "Python Workshop",
-            Date: "12/06/2023",
-            Time: "3 PM",
-            Reg_Fee: 300,
-            Venue: "Room 305",
-            Image:testimage2,
-        },
-        {
-            Club: "Data Science Society",
-            EventName: "Machine Learning Hackathon",
-            Reg_Fee: 300,
-            Date: "05/08/2023",
-            Time: "10 AM",
-            Venue: "Machine Learning Lab",
-            Image: testimage1
-        },
-        {
-            Club: "Data Science Society",
-            Reg_Fee: 300,
-            EventName: "Data Visualization Seminar",
-            Date: "21/09/2023",
-            Time: "2:30 PM",
-            Image: testimage5,
-            Venue: "Visualization Room",
-        },
-        {
-            Club: "Data Science Society",
-            Reg_Fee: 300,
-            EventName: "Big Data Symposium",
-            Date: "15/11/2023",
-            Time: "9 AM",
-            Venue: "Data Hub",
-            Image: testimage4
-        },
-        {
-            Club: "Data Science Society",
-            Reg_Fee: 300,
-            EventName: "AI in Healthcare Workshop",
-            Date: "28/01/2024",
-            Time: "11 AM",
-            Venue: "HealthTech Center",
-        },
-        {
-            Club: "Data Science Society",
-            EventName: "Data Ethics Conference",
-            Reg_Fee: 300,
-            Date: "17/03/2024",
-            Time: "4 PM",
-            Image: testimage4,
-            Venue: "Ethics Auditorium",
-        },
-        {
-            Club: "Data Science Society",
-            EventName: "Deep Learning Bootcamp",
-            Date: "10/05/2024",
-            Reg_Fee: 300,
-            Time: "10 AM",
-            Venue: "Deep Learning Lab",
-        },
-        {
-            Reg_Fee: 300,
-            Club: "Data Science Society",
-            EventName: "Data Analytics Challenge",
-            Date: "22/06/2024",
-            Time: "1 PM",
-            Image: testimage5,
-            Venue: "Analytics Arena",
-        },
-        {
-            Club: "Data Science Society",
-            EventName: "AI Ethics Seminar",
-            Image: testimage6,
-            Date: "19/08/2024",
-            Time: "3 PM",
-            Reg_Fee: 300,
-            Venue: "Ethics Lab",
-        },
-        {
-            Club: "Data Science Society",
-            Reg_Fee: 300,
-            EventName: "Machine Learning Expo",
-            Date: "04/10/2024",
-            Time: "9:30 AM",
-            Venue: "ML Expo Center",
-            Image: testimage2
-        }
-        
-        
-    ]
+    
 
     return(
         <div className="Events">
@@ -145,7 +108,7 @@ export default function Events(){
             <div className="events-desc">
                 Events Coming soon
             </div>
-            <BlockOfEvents arr={arr} />
+            <BlockOfEvents/>
         </div>
     )
 }

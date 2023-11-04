@@ -1,7 +1,7 @@
 .InputFields-Black{
     overflow-y: scroll;
     padding: 5% 5% 0 5%;
-    color: Black;
+    color: white;
 }
 
 .InputFields-White{
@@ -13,7 +13,7 @@
 
 .regmenu--heading-black{
     font-size: 1.5rem;
-    color:#2e2e2e;
+    color:#ffffff;
 }
 
 .regmenu--heading-white{
@@ -67,15 +67,16 @@
     width: 40%;
     height: 5vh;
     font-size: 18px;
-    outline: solid 1px var(--submitgreen);
+    outline: solid 1px var(--bgblue);
     border:none;
     border-radius: 5px;
-    color:#000;
+    color:#fff;
     box-shadow: 2px 2px 0px 0px black;
 }
 
 .submitBtn--green{
-    background-color: var(--submitgreen);
+    color:#fff;
+    background-color: var(--bgblue);
 }
 
 .submitBtn--blue{
@@ -84,7 +85,7 @@
 }
 
 .submitBtn:active{
-    background-color: #175c4e;
+    background-color: #17365c;
     box-shadow: 2px 2px 0px 0px black;
     box-shadow: inset 1px 1px 0px 0px black;
 

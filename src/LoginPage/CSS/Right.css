@@ -7,3 +7,10 @@
 .right--navbar{
     justify-self: start;
 }
+
+@media only screen and (max-width: 768px){
+    .right--loginmenu{
+        margin-top: 10%;
+        justify-self: center;
+    }
+}

@@ -2,19 +2,44 @@ import './../CSS/Record.css'
 import logo from '../../assets/clipart.png'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCircleUser } from '@fortawesome/free-solid-svg-icons'
+import { useAuth } from '../../Auth/authProvider'
+import { useState ,useEffect } from 'react'
+import axios from 'axios'
 
 
 
 
 export default function Record(){
     
-    const objs = {
-        "Student":"Aritro Ghosh",
-        "Email":"aritro10@gmail.com",
-        "Roll Number":"B210466CS",
-    }
+    const { token } = useAuth();
+    const [objs,setObjs] = useState({});
+    const [keysList,setKeysList] = useState([]);
 
-    let keys = Object.keys(objs);
+    useEffect( ()=>{
+        // console.log(token);
+        axios.get("https://nitclub-backend--arshiyahafis.repl.co/profile/"
+        ,{
+            headers:{"Authorization" : `token ${token}`}
+        }
+        )
+        .then( (r)=>{
+            console.log(r);
+            setObjs({
+                "Name":r.data.first_name+" "+r.data.last_name,
+                "Email":r.data.email,
+                "Phone Number":r.data.phone_number,
+                "Roll Number":r.data.roll_number,
+            })
+        } )
+        .catch((e)=>{
+            console.log(e);
+        }) },[]
+    )
+
+    useEffect( ()=>{
+        setKeysList(Object.keys(objs));
+        },[objs]
+    )
 
     return(
         <div className="Record">
@@ -22,7 +47,7 @@ export default function Record(){
             <FontAwesomeIcon className='clubLogo' icon={faCircleUser}  />
 
             {
-                keys.map( (x,i) => (
+                keysList.map( (x,i) => (
                     <div key={i} className={`field${i}`}>
                         <div className="value">
                             {objs[x]}

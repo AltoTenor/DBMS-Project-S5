@@ -7,10 +7,12 @@
     overflow: auto;
     white-space: nowrap;
     padding-left: 2%;
+    padding-right: 2%;
+    height: 70px;
 }
 
 .clubLogo{
-    height: 70px;
+    height: 70%;
 }
 
 [class^="field"]{
@@ -21,7 +23,7 @@
     color: var(--colors-black-100, #000);
 
     /* H2 */
-    font-size: 22px;
+    font-size: 1.2em;
     font-style: normal;
     font-weight: 500;
 }
@@ -51,4 +53,11 @@
 .Report_Button:active{
     box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
     
+}
+
+
+@media only screen and (max-width: 768px){
+    .Record{
+        margin: 1% 2% 1% 2%;
+    }
 }

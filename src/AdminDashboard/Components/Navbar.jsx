@@ -5,12 +5,17 @@ import { Link } from 'react-router-dom'
 
 
 export default function Navbar(){
+    let width = window.innerWidth;
+
     return(
         <div className="Navbar">
-            <div className="search">
-                <input defaultValue = {"Search"}></input>
-                <FontAwesomeIcon size='lg' icon={faMagnifyingGlass} />
-            </div>
+            {
+                (width>768)&&
+                <div className="search">
+                    <input defaultValue = {"Search"}></input>
+                    <FontAwesomeIcon size='lg' icon={faMagnifyingGlass} />
+                </div>
+            }
             <Link to={`/logout`} relative='route' className="logout" >Logout</Link>
         </div>
     )

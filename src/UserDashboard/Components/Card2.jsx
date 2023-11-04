@@ -20,8 +20,8 @@ export default function Card2({events,paid,id,handleClick}){
                     :
                     <FontAwesomeIcon icon={faMoneyCheckDollar} className='dollar' /> 
                 }
-                <div className="paid">{paid?"Paid":"Pay"}</div> 
-                <div className="feeamt">{events.Reg_Fee||"NIL"}</div>
+                <div className="paid">{paid?"Paid":"Register "}</div> 
+                <div className="feeamt">{"Rs "+events.Reg_Fee||"NIL"}</div>
             </div>
         </div>
     )

@@ -19,7 +19,7 @@ export default function RegMenu(){
     return (
         <div className={isAdmin?"regmenu-blue":"regmenu-green"}>
             <div className="tabs">
-                <div className={!isAdmin?"admin--btn1":"student--btn"} onClick={changeToStudent} >As a Student </div>
+                <div className={!isAdmin?"admin--btn1":"student--btn"} onClick={changeToStudent} > As a Student </div>
                 <div className={isAdmin?"admin--btn":"student--btn1"} onClick={changeToAdmin} >  As an Admin </div>
             </div>
             {isAdmin?

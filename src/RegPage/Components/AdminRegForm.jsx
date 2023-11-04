@@ -1,36 +1,26 @@
 import "./../CSS/CSSRegForm.css"
 import { useState,useEffect } from 'react';
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 // const baseURL = "??";
 
 
-export default function StudentRegForm(){
+export default function AdminRegForm(){
+
+    const navigate = useNavigate();
+
+
     const [details,setDetails] = useState(
         {
-            "CName":"",
-            "ClubID":"",
-            "ClubFA":"",
-            "ClubAdminID":"",
-            "ClubLogo":"",
-            "ClubOB": 0,
+            "club_name":"",
+            "club_id":"",
+            "club_fa":"",
+            "club_admin":"",
+            "club_logo":"",
+            "club_opening_balance": 0,
         }
     )
-
-    // useEffect(() => {
-    //     axios.get(baseURL)
-    //     .then((response) => {
-    //       setDetails(response.data);
-    //     });
-    // }, []);
-
-    // function createPost() {
-    //     axios
-    //     .post(baseURL, details )
-    //     .then((response) => {
-    //     setDetails(response.data);
-    //     });
-    // }
     
 
     const handleChange = (event) => {
@@ -42,7 +32,27 @@ export default function StudentRegForm(){
 
     function handleSubmit(e){
         e.preventDefault();
-        console.log(details);
+        const admin_data = {
+            ...details,
+            club_opening_balance : parseInt(details.club_opening_balance), 
+        }
+        if ( admin_data.club_logo == ""){
+            delete admin_data.club_logo;
+        }
+        console.log(admin_data);
+        axios.post("https://nitclub-backend.arshiyahafis.repl.co/clubs/", admin_data,{
+            headers: {
+            'Content-Type': 'application/json'
+            }
+        })
+        .then((response) => {
+            console.log(response.status);
+            navigate("/login", { replace: true });
+        }
+        ,(r)=>{
+            console.log(r);
+            alert("Invalid Register");
+        });
     }
 
     return (
@@ -58,8 +68,8 @@ export default function StudentRegForm(){
             <input 
                 className="regmenu--text-input"
                 type="text" 
-                name="CName" 
-                value={details.CName || ""} 
+                name="club_name" 
+                value={details.club_name || ""} 
                 onChange={handleChange}
             />
 
@@ -67,8 +77,8 @@ export default function StudentRegForm(){
             <input 
                 className="regmenu--text-input"
                 type="text" 
-                name="ClubID" 
-                value={details.ClubID || ""} 
+                name="club_id" 
+                value={details.club_id || ""} 
                 onChange={handleChange}
             />
 
@@ -78,8 +88,8 @@ export default function StudentRegForm(){
             <input 
                 className="regmenu--text-input"
                 type="text" 
-                name="ClubFA" 
-                value={details.ClubFA || ""} 
+                name="club_fa" 
+                value={details.club_fa || ""} 
                 onChange={handleChange}
             />
 
@@ -87,8 +97,8 @@ export default function StudentRegForm(){
             <input 
                 className="regmenu--text-input"
                 type="text" 
-                name="ClubAdminID" 
-                value={details.ClubAdminID || ""} 
+                name="club_admin" 
+                value={details.club_admin || ""} 
                 onChange={handleChange}
             />
 
@@ -96,8 +106,8 @@ export default function StudentRegForm(){
             <input 
                 className="regmenu--file-input"
                 type="file" 
-                name="ClubLogo" 
-                value={details.ClubLogo || ""} 
+                name="club_logo" 
+                value={details.club_logo || ""} 
                 onChange={handleChange}
             />
 
@@ -105,8 +115,8 @@ export default function StudentRegForm(){
             <input 
                 className="regmenu--text-input"
                 type="number" 
-                name="ClubOB" 
-                value={details.ClubOB || ""} 
+                name="club_opening_balance" 
+                value={details.club_opening_balance || ""} 
                 onChange={handleChange}
             />
             

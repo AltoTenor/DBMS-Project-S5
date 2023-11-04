@@ -26,3 +26,10 @@
     padding: 0.4%;
 
 }
+
+@media only screen and (max-width: 768px){
+    .Events{
+        padding-left: 4%;
+        padding-right: 4%;
+    }
+}

@@ -99,3 +99,15 @@
     box-shadow: inset 1px 1px 0px 0px black;
 
 } 
+
+
+@media only screen and (max-width: 768px){
+    .Events{
+        padding-left: 4%;
+        padding-right: 4%;
+    }
+    .white-add{
+        display: flex;
+        flex-direction: column;
+    }
+}

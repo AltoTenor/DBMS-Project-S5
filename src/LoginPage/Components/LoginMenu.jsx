@@ -7,7 +7,7 @@ import { useNavigate } from 'react-router-dom';
 export default function LoginMenu(){
     const [email,setEmail] = useState("");
     const [password,setPassword] = useState("");
-    const { setToken } = useAuth();
+    const { setToken , setIsAdmin } = useAuth();
     const navigate = useNavigate();
 
     function handleChangeEmail(e){
@@ -19,9 +19,12 @@ export default function LoginMenu(){
     }
 
 
-    function handleSuccessLogin(tk){
+    function handleSuccessLogin(tk,isAdmin){
         setToken(tk);
-        navigate("/dashboard", { replace: true });
+        setIsAdmin(isAdmin);
+        // console.log(tk);
+        if (!isAdmin) navigate("/dashboard", { replace: true });
+        else navigate("/admin-dashboard", { replace: true });
     };
 
 
@@ -32,14 +35,14 @@ export default function LoginMenu(){
             password: password
         };
         console.log(userData);
-        axios.post("https://nitclub-backend.arshiyahafis.repl.co/login/", userData,{
+        axios.post("https://nitclub-backend--arshiyahafis.repl.co/login/", userData,{
             headers: {
               'Content-Type': 'application/json'
             }
           })
         .then((response) => {
-            console.log(response.status, response.data.token);
-            handleSuccessLogin(response.data.token);
+            console.log(response.status, response.data.user.isClubAdmin);
+            handleSuccessLogin(response.data.token,response.data.user.isClubAdmin);
         }
         ,(r)=>{
             console.log(r);

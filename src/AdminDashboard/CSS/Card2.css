@@ -167,3 +167,54 @@
 }
 
 
+@media only screen and (max-width: 768px){
+    .Events{
+        padding-left: 4%;
+        padding-right: 4%;
+    }
+    .eventname,.eventregfee-paid,.eventregfee-notpaid{
+        font-size: 5vw;
+    }
+    .eventvenue,.eventtime{
+        font-size: 4vw;
+    }
+}
+
+
+.update_delete_box{
+    grid-area: regfee;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* background-color: aqua; */
+    padding:25%;
+    padding-bottom: 60%;
+}
+
+.update-btn{
+    background-color: var(--checkgreen);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height:100%;
+    border-radius:5px 5px  0 0 ;
+    width:100%;
+}
+
+.delete-btn{
+    height:100%;
+    display: flex;
+    justify-content: center;
+    background-color: var(--deletered);
+    align-items: center;
+    border-radius: 0 0 5px 5px;
+    width:100%;
+}
+
+.delete-btn:hover{
+    background-color: var(--offred);
+}
+
+.update-btn:hover{
+    background-color: var(--offblue);
+}

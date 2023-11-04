@@ -1,0 +1,56 @@
+.are-you-sure-screen{
+    position: fixed;
+    bottom: 0;
+    left:0;
+    display: flex;
+    align-items: center;
+    justify-content  : center;
+    background-color: rgba(55, 150, 131, .85);
+    height: 100%;
+    width: 100vw;
+    overflow-x: visible;
+    z-index: 1;
+    font-size: 1em;
+}
+
+.sure-box{
+    background-color: white;
+    padding: 5%;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+.btns{
+    margin-top: 10%;
+    background-color: bisque;
+    display: flex;
+    border-radius: 10px;
+}
+
+.btn1{
+    width: 100%;
+    padding-block: 5%;
+    display: flex;
+    justify-content: center;
+    border-radius: 10px 0 0 10px;
+    background-color: var(--deletered);
+}
+
+.btn1:hover{
+    background-color: var(--offred);
+}
+
+
+.btn2{
+    padding-block: 5%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    border-radius: 0 10px 10px 0;
+    background-color: rgb(189, 185, 185);
+}
+
+.btn2:hover{
+    background-color: rgb(199, 199, 199);
+}

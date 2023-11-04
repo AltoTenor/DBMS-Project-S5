@@ -14,3 +14,15 @@ body{
     " left events "
     ;
 }
+
+@media only screen and (max-width: 768px){
+    .UserDashboard{
+        grid-template-columns: 1fr;
+        grid-template-rows: 7fr 12fr 75fr;
+        grid-template-areas: 
+        "nav"
+        "rec"
+        "events"
+        ;
+    }
+}

@@ -37,7 +37,7 @@ const routesForPublic = [
         
 function ProtectedRouterProvider(){
 
-    const { token } = useAuth();
+    // const { token } = useAuth();
     const routesForAuthenticatedOnly = [
         {
             path: "/",
@@ -48,12 +48,18 @@ function ProtectedRouterProvider(){
                 element: <UserDashboard/>,
                 },
                 {
-                    path: "/admin-dashboard",
-                    element: <AdminDashboard/>,
-                },
-                {
                 path: "/logout",
                 element: <Logout/>,
+                },
+            ],
+        },
+        {
+            path: "/",
+            element: <ProtectedRoute />, // Wrap the component in ProtectedRoute
+            children: [
+                {
+                path: "/admin-dashboard",
+                element: <AdminDashboard/>,
                 },
             ],
         },
@@ -84,10 +90,10 @@ function ProtectedRouterProvider(){
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <React.StrictMode>
-    <AuthProvider>
-        <ProtectedRouterProvider/>
-    </AuthProvider>
-  </React.StrictMode>
+    <React.StrictMode>
+        <AuthProvider>
+            <ProtectedRouterProvider/>
+        </AuthProvider>
+    </React.StrictMode>
 );
 

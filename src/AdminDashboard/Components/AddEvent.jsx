@@ -6,12 +6,15 @@ import testimage2 from "../../assets/fossmeet.jpeg"
 import testimage4 from "../../assets/hk.jpg"
 import testimage5 from "../../assets/fossmeet.jpeg"
 import { useState } from 'react'
+import axios from 'axios'
+import { useEffect } from 'react'
+import { useAuth } from '../../Auth/authProvider'
 
 
 
 function BlockOfEvents(){
 
-
+    const { token } = useAuth();
 
     const [event,setEvent] = useState({
         event_name:"",
@@ -20,10 +23,14 @@ function BlockOfEvents(){
         event_venue:"",
         event_budget:"",
         event_cost:"",
+        event_profit:"",
+        event_regfee:"",
+        event_image:"",
+        event_profit:"",
     })
 
     function handleChange(e){
-        console.log(e.target.name);
+        // console.log(e.target.name);
         setEvent(
             {
                 ...event,
@@ -34,7 +41,33 @@ function BlockOfEvents(){
 
     function handleSubmit(e){
         e.preventDefault();
-        console.log(event);
+
+        axios.get("https://nitclub-backend--arshiyahafis.repl.co/profile/"
+        ,{
+            headers:{"Authorization" : `token ${token}`}
+        }
+        )
+        .then(student=>{
+            // console.log(student.data.clubs[0].club_id);
+            axios.post("https://nitclub-backend--arshiyahafis.repl.co/events/",
+            {
+                event_club: student.data.clubs[0].club_id,
+                event_name: event.event_name,
+                event_date: "2023-12-05",
+                event_time: "14:00:00",
+                event_venue: event.event_venue,
+                event_regfee: event.event_regfee,
+            },
+            {
+                headers:{"Authorization" : `token ${token}`}
+            }
+            )
+            .then(r=>{console.log(r);window.location.reload()})
+            .catch(e=>console.log(e));
+        })
+
+
+        
     }
 
     function isDateFormat(inputString) {
@@ -51,10 +84,10 @@ function BlockOfEvents(){
 
     function isXPMAM(str) {
         // Define a regular expression pattern to match the format "X AM" or "X PM" where X is a number from 1 to 12
-        const pattern = /^(1[0-2]|[1-9]) (AM|PM)$/;
+        const regexPattern = /^(0[0-9]|1[0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]$/;
 
-        // Use the test method to check if the string matches the pattern
-        return pattern.test(str);
+        // Use the test method to check if the inputString matches the pattern
+        return regexPattern.test(str);
     }
 
     return( 
@@ -82,7 +115,7 @@ function BlockOfEvents(){
             />
             </div>
             <div className="eventadd-box">
-                <label className="eventadd-label" htmlFor='Etime'>Event Time (Eg: 2 PM) </label>
+                <label className="eventadd-label" htmlFor='Etime'>Event Time (Eg: 14:00:00) </label>
                 <input 
                     className={`eventadd-input ${(event.event_time==="")?"":(isXPMAM(event.event_time))?"eventadd-input-dirty":"eventadd-input-invalid"}  `}
                     type="text" 
@@ -104,27 +137,17 @@ function BlockOfEvents(){
             />
             </div>
             <div className="eventadd-box">
-                <label className="eventadd-label">Event Budget (in ₹) </label>
+                <label className="eventadd-label" htmlFor='ERegFee'> Event Reg Fee</label>
                 <input 
                     type="text" 
-                    className={`eventadd-input ${(event.event_budget==="")?"":(!isNaN(event.event_budget))?"eventadd-input-dirty":"eventadd-input-invalid"}  `}
-                    name='event_budget' 
-                    id="Ebudget" 
-                    onChange={handleChange} 
-                    value = {event.event_budget} 
-            />
+                    className={`eventadd-input ${(event.event_regfee==="")?"":(!isNaN(event.event_regfee))?"eventadd-input-dirty":"eventadd-input-invalid"}  `}
+                    name='event_regfee' 
+                     id="ERegFee" 
+                      onChange={handleChange} 
+                      value = {event.event_regfee} 
+                />
             </div>
-            <div className="eventadd-box">
-                <label className="eventadd-label">Event Cost (in ₹)</label> 
-                <input 
-                    type="text" 
-                    className={`eventadd-input ${(event.event_cost==="")?"":(!isNaN(event.event_cost))?"eventadd-input-dirty":"eventadd-input-invalid"}  `}
-                    name='event_cost' 
-                    id="Ecost" 
-                    onChange={handleChange} 
-                    value = {event.event_cost} 
-            />
-            </div>
+
             <button className='addEventBtn' type='submit'  onClick={handleSubmit}> CREATE EVENT  </button>
         </form>)
 }

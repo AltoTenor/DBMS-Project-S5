@@ -15,9 +15,9 @@
 }
 
 
-
 .item-1{
-    height: 6%;
+    width: 70%;
+    aspect-ratio: 1 / 1;
 }
 
 .item-2{
@@ -33,4 +33,29 @@
 
 .item-4:hover{
     color:var(--offgreen);
+}
+
+
+@media only screen and (max-width: 768px){
+    .Lefttab{
+        position: fixed;
+        flex-direction: row;
+        bottom: 15px;
+        align-self: center;
+        border-radius: 20px 20px 20px 20px ;
+        justify-self: center;
+        justify-content: center;
+        margin-right: 0%;
+        width: 60%;
+        background-color: rgba(55, 150, 131, .85);
+        height: 10%;
+        z-index: 1;
+
+    }
+    .item{
+        margin-left: 5%;
+        margin-right: 5%;
+    }
+    
+
 }

@@ -7,15 +7,24 @@ import UpcEvents from './AdminDashboard/Components/UpcEvents'
 import UpdateEvent from './AdminDashboard/Components/UpdateEvent'
 import AddEvent from './AdminDashboard/Components/AddEvent'
 import { useState } from 'react';
+import ClubEvents from './AdminDashboard/Components/ClubEvents';
 
 
 export default function UserDashboard(){
 
     const [tabNumber,setTabNumber] = useState(1);
+    const [EventNo,setEventNo] = useState(1);
 
-    let events_renders = [<RegEvents tabNumber={tabNumber}/> ,<UpcEvents tabNumber={tabNumber} />,<AddEvent tabNumber={tabNumber}/>,<UpdateEvent tabNumber={tabNumber}/> ]
+    let events_renders = [
+        <RegEvents tabNumber={tabNumber}/> ,
+        <UpcEvents tabNumber={tabNumber} />,
+        <AddEvent tabNumber={tabNumber}/>,
+        <ClubEvents tabNumber={tabNumber} setTabNumber={setTabNumber} setEventNo = {setEventNo} />, 
+        <UpdateEvent tabNumber={tabNumber} EventNo={EventNo}/> 
+    ]
+    let width = window.innerWidth;
 
-    console.log(tabNumber);
+    // console.log(tabNumber);
     return (
         <div className='AdminDashboard'>
             <Lefttab tabNumber={tabNumber} setTabNumber={setTabNumber} />

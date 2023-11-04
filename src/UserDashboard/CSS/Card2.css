@@ -166,3 +166,15 @@
 }
 
 
+@media only screen and (max-width: 768px){
+    .Events{
+        padding-left: 4%;
+        padding-right: 4%;
+    }
+    .eventname,.eventregfee-paid,.eventregfee-notpaid{
+        font-size: 5vw;
+    }
+    .eventvenue,.eventtime{
+        font-size: 4vw;
+    }
+}
