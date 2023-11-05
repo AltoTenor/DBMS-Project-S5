@@ -19,7 +19,7 @@ export default function UserDashboard(){
         <RegEvents tabNumber={tabNumber}/> ,
         <UpcEvents tabNumber={tabNumber} />,
         <AddEvent tabNumber={tabNumber}/>,
-        <ClubEvents tabNumber={tabNumber} setTabNumber={setTabNumber} setEventNo = {setEventNo} />, 
+        <ClubEvents tabNumber={tabNumber} setTabNumber={setTabNumber} setEventNo = {setEventNo} EventNo={EventNo}/>, 
         <UpdateEvent tabNumber={tabNumber} EventNo={EventNo}/> 
     ]
     let width = window.innerWidth;

@@ -22,12 +22,12 @@ export default function Genpdf(ClubName,rows){
     const margin = 0.5; // inches on a 8.5 x 11 inch sheet.
     const verticalOffset = margin;
     var columns = [
-        {title: "Heading1", dataKey: "col1"},
-        {title: "Heading2", dataKey: "col2"}, 
-        {title: "Heading3", dataKey: "col3"},
-        {title: "Heading4", dataKey: "col4"},
-        {title: "Heading5", dataKey: "col5"},
-        {title: "Heading6", dataKey: "col6"},
+        {title: "Event Name", dataKey: "col1"},
+        {title: "Budget Set", dataKey: "col2"}, 
+        {title: "Cost Incurred", dataKey: "col3"},
+        {title: "Profit/Loss", dataKey: "col4"},
+        {title: "No of Students Reg.", dataKey: "col5"},
+        {title: "Registration Fee", dataKey: "col6"},
     ];
     
     // btn.addEventListener("click", () => {

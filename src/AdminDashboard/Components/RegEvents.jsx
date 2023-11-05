@@ -1,10 +1,5 @@
 import './../CSS/Events.css'
 import CardTwo from './Card2'
-import testimage3 from "../../assets/kp.jpg"
-import testimage1 from "../../assets/bg1.jpg"
-import testimage2 from "../../assets/fossmeet.jpeg"
-import testimage6 from "../../assets/hk.jpg"
-import testimage5 from "../../assets/fossmeet.jpeg"
 import { useAuth } from '../../Auth/authProvider'
 import axios from 'axios'
 import { useEffect,useState } from 'react'
@@ -42,7 +37,7 @@ function BlockOfEvents(){
             console.log(e);
         }) },[]
     )
-
+    
     let width = window.innerWidth;
     if (width>768) {
     return (<div className="white">
@@ -70,7 +65,6 @@ function BlockOfEvents(){
         )
     }
 }
-
 
 export default function Events(){
 

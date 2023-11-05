@@ -13,22 +13,25 @@
 
 .regmenu--heading-black{
     font-size: 1.5rem;
-    color:#ffffff;
+    color:black;
 }
 
 .regmenu--heading-white{
     font-size: 1.5rem;
-    color:#ffffff;
+    color:black;
 }
 
 .regmenu--desc{
     padding-top: 2%;
     padding-bottom: 5%;
     font-size: 1rem;
+    color:black;
+
 }
 
 .regmenu--text{
     padding: 0% 0 4% 0;
+    color:black;
     font-size: 1.2rem;
 }
 
@@ -52,7 +55,7 @@
     width: 95%;
     height: 2rem;
     border-radius: 2px;
-    color: rgba(255, 255, 255, 0.795);
+    color: rgba(0, 0, 0, 0.795);
     padding: 1px 1px 1px 0px;
     margin: 10px 0px 15px 0;
 }

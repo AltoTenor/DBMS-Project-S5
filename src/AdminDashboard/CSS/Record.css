@@ -1,13 +1,14 @@
 .Record{
     display: flex;
     align-items: center;
-    background-color: whitesmoke;
+    background-color: rgba(255, 255, 255, 0.9);
     margin: 1% 1% 1% 0;
     border-radius: 10px 10px 2px 2px;
     overflow: auto;
     white-space: nowrap;
     padding-left: 2%;
     padding-right: 2%;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
     height: 70px;
 }
 
@@ -41,11 +42,11 @@
 .Report_Button{
     border: none;
     margin-left: 5%;
-    background-color: var(--offred);
+    background-color: var(--burntsienna);
     padding: .6%;
     border-radius: 5px;
-    box-shadow: rgba(214, 30, 30, 0.65) 0px 2px 4px 0px;
-    border:solid 1px darkred;
+    box-shadow: var(--burntsienna) 1px 1px 1px 0px;
+    border:solid 1px var(--burntsienna);
 }
 
 

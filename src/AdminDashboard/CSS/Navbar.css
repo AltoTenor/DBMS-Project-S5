@@ -14,9 +14,9 @@
 }
 
 .search>input{
-    background-color: var(--submitgreen);
+    background-color: white;
     font-size: 1.1rem;
-    border: none;
+    border: 1px solid #000;
     border-radius: 10px ;
     margin-right: 5%;
     padding-left: 5%;

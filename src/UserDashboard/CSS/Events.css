@@ -1,4 +1,4 @@
-.Events{
+/* .Events{
     grid-area: events;
     padding: 1%;
     padding-left: 0;
@@ -19,8 +19,8 @@
 }
 
 .white{
-    background-color: #dfdfdf88;
     height: 90vh;
+    background-color: rgba(255, 255, 255, 0.668);
     border-radius: 10px;
     overflow-y: scroll;
     padding: 0.4%;
@@ -32,4 +32,4 @@
         padding-left: 4%;
         padding-right: 4%;
     }
-}
+} */

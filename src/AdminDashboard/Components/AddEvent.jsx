@@ -1,15 +1,11 @@
 import './../CSS/AddEvent.css'
 import CardTwo from './Card2'
-import testimage3 from "../../assets/kp.jpg"
-import testimage1 from "../../assets/bg1.jpg"
-import testimage2 from "../../assets/fossmeet.jpeg"
-import testimage4 from "../../assets/hk.jpg"
-import testimage5 from "../../assets/fossmeet.jpeg"
 import { useState } from 'react'
 import axios from 'axios'
 import { useEffect } from 'react'
 import { useAuth } from '../../Auth/authProvider'
-
+import FormData from 'form-data'
+import mime from 'mime'
 
 
 function BlockOfEvents(){
@@ -39,6 +35,15 @@ function BlockOfEvents(){
         )
     }
 
+    function handleImageChange(e){
+        console.log(e.target.files[0]);
+        setEvent({
+            ...event,
+            "event_image":e.target.files[0],
+            }
+        )
+    }
+
     function handleSubmit(e){
         e.preventDefault();
 
@@ -48,18 +53,22 @@ function BlockOfEvents(){
         }
         )
         .then(student=>{
-            // console.log(student.data.clubs[0].club_id);
+            const formdata = new FormData();
+            // console.log(event.event_image);
+            formdata.append("event_image",
+                event.event_image,event.event_image.name
+            );
+            formdata.append("event_club",student.data.clubs[0].club_id);
+            formdata.append("event_name",event.event_name);
+            formdata.append("event_date",event.event_date);
+            formdata.append("event_time",event.event_time);
+            formdata.append("event_venue",event.event_venue);
+            formdata.append("event_regfee",event.event_regfee);
             axios.post("https://nitclub-backend--arshiyahafis.repl.co/events/",
+            formdata,
             {
-                event_club: student.data.clubs[0].club_id,
-                event_name: event.event_name,
-                event_date: "2023-12-05",
-                event_time: "14:00:00",
-                event_venue: event.event_venue,
-                event_regfee: event.event_regfee,
-            },
-            {
-                headers:{"Authorization" : `token ${token}`}
+                headers:{"Authorization" : `token ${token}`},
+                'Content-Type': 'multipart/form-data'
             }
             )
             .then(r=>{console.log(r);window.location.reload()})
@@ -72,7 +81,8 @@ function BlockOfEvents(){
 
     function isDateFormat(inputString) {
         // Define a regular expression pattern for the "DD/MM/YYYY" format
-        const datePattern = /^(0[1-9]|[12][0-9]|3[01])\/(0[1-9]|1[0-2])\/\d{4}$/;
+        const datePattern = /^\d{4}-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])$/;
+
       
         // Use the test() method of the regular expression to check if the inputString matches the pattern
         return datePattern.test(inputString);
@@ -104,7 +114,7 @@ function BlockOfEvents(){
                 />
             </div>
             <div className="eventadd-box">
-                <label className="eventadd-label" htmlFor='Edate'>Event Date (Eg: DD/MM/YYYY) </label>
+                <label className="eventadd-label" htmlFor='Edate'>Event Date (Eg: YYYY-MM-DD) </label>
                 <input 
                     type="text" 
                     className={`eventadd-input ${(event.event_date==="")?"":(isDateFormat(event.event_date))?"eventadd-input-dirty":"eventadd-input-invalid"}  `}
@@ -115,7 +125,7 @@ function BlockOfEvents(){
             />
             </div>
             <div className="eventadd-box">
-                <label className="eventadd-label" htmlFor='Etime'>Event Time (Eg: 14:00:00) </label>
+                <label className="eventadd-label" htmlFor='Etime'>Event Time (HH:MM:SS Eg: 20:00:00) </label>
                 <input 
                     className={`eventadd-input ${(event.event_time==="")?"":(isXPMAM(event.event_time))?"eventadd-input-dirty":"eventadd-input-invalid"}  `}
                     type="text" 
@@ -142,12 +152,22 @@ function BlockOfEvents(){
                     type="text" 
                     className={`eventadd-input ${(event.event_regfee==="")?"":(!isNaN(event.event_regfee))?"eventadd-input-dirty":"eventadd-input-invalid"}  `}
                     name='event_regfee' 
-                     id="ERegFee" 
-                      onChange={handleChange} 
-                      value = {event.event_regfee} 
+                    id="ERegFee" 
+                    onChange={handleChange} 
+                    value = {event.event_regfee} 
                 />
             </div>
-
+            <div className="eventadd-box">
+                <label className="eventadd-label" htmlFor='EImage'> Event Poster</label>
+                <input 
+                    type="file" 
+                    className={`eventadd-input`}
+                    style={{boxShadow:"none"}}
+                    name='event_image' 
+                    id="EImage" 
+                    onChange={handleImageChange} 
+                />
+            </div>
             <button className='addEventBtn' type='submit'  onClick={handleSubmit}> CREATE EVENT  </button>
         </form>)
 }

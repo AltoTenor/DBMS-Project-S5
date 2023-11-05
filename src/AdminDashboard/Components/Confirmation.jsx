@@ -7,6 +7,7 @@ export default function Confirmation({handleYes,handleNo}){
         <div className="are-you-sure-screen">
             <div className="sure-box">
                 <FontAwesomeIcon icon={faTriangleExclamation} size='2xl' color='#f00' />
+                <br/>
                 Are you sure you want to delete this event?
                 <div className="btns">
                     <div className="btn1" onClick={handleYes}>

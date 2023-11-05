@@ -1,5 +1,5 @@
 .Lefttab{
-    background-color: rgba(55, 150, 131, 1);
+    background-color: var(--persiangreen);
     margin-right: 15%;
     border-radius: 0 15px 15px 0 ;
     grid-area: left;
@@ -18,7 +18,7 @@
 
 .item-1{
     width: 70%;
-    aspect-ratio: 1 / 1;
+    aspect-ratio: 1 / 1.2;
 }
 
 .item-2{
@@ -52,7 +52,8 @@
         justify-content: center;
         margin-right: 0%;
         width: 60%;
-        background-color: rgba(55, 150, 131, .85);
+        background-color: var(--transcharcoal);
+        background-color: opacity 0.2;
         height: 60px;
         z-index: 1;
 

@@ -1,6 +1,7 @@
 import "./../CSS/CSSRegForm.css"
 import { useState,useEffect } from 'react';
 import axios from "axios";
+import FormData from 'form-data'
 import { useNavigate } from "react-router-dom";
 
 // const baseURL = "??";
@@ -29,20 +30,38 @@ export default function AdminRegForm(){
         setDetails(obj => ({...obj, [name]: value}))
     }
 
+    function handleImageChange(e){
+        console.log(e.target.files[0]);
+        setDetails({
+            ...details,
+            "club_logo":e.target.files[0],
+            }
+        )
+    }
+
 
     function handleSubmit(e){
         e.preventDefault();
-        const admin_data = {
-            ...details,
-            club_opening_balance : parseInt(details.club_opening_balance), 
-        }
-        if ( admin_data.club_logo == ""){
-            delete admin_data.club_logo;
-        }
+        // const admin_data = {
+        //     ...details,
+        //     club_opening_balance : parseInt(details.club_opening_balance), 
+        // }
+        // if ( admin_data.club_logo == ""){
+        //     delete admin_data.club_logo;
+        // }
+        const admin_data = new FormData();
+        admin_data.append("club_logo",
+            details.club_logo,details.club_logo.name
+        );
+        admin_data.append("club_name",details.club_name);
+        admin_data.append("club_id",details.club_id);
+        admin_data.append("club_fa",details.club_fa);
+        admin_data.append("club_admin",details.club_admin);
+        admin_data.append("club_opening_balance",details.club_opening_balance);
         console.log(admin_data);
-        axios.post("https://nitclub-backend.arshiyahafis.repl.co/clubs/", admin_data,{
+        axios.post("https://nitclub-backend--arshiyahafis.repl.co/clubs/", admin_data,{
             headers: {
-            'Content-Type': 'application/json'
+                'Content-Type': 'multipart/form-data'
             }
         })
         .then((response) => {
@@ -107,8 +126,7 @@ export default function AdminRegForm(){
                 className="regmenu--file-input"
                 type="file" 
                 name="club_logo" 
-                value={details.club_logo || ""} 
-                onChange={handleChange}
+                onChange={handleImageChange}
             />
 
             <label className="regmenu--text" >Club Opening Balance </label>

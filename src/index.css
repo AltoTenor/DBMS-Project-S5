@@ -1,7 +1,8 @@
 :root{
     --bgblue: #0E3541;
+    --armygreen:#2a4f2878;
     --menulightblue: #19647a;
-    --offwhite: #C1BBBB;
+    --offwhite: #EFEFEF;
     --submitgreen: #379683;
     --darkgreen: #297164;
     --offgreen: #9bcdc4;
@@ -13,10 +14,22 @@
     --offred: #cf444498;
     --cnamepurple: #aa65d86f;
     --dashboardbg: rgb(55,150,131,0.26);
-    --checkgreen: #70c7ed;
+    --checkgreen: #508ea8;
     --checkblue: rgba(112, 206, 237, 0.375);
     --superlightblue: #a2dbf480;
-    --superlightred: rgba(244, 168, 162, 0.502)
+    --superlightred: rgba(244, 168, 162, 0.502);
+    --persiangreen: #2A9D8F;
+    --charcoal: #254e5e;
+    --transcharcoal: #254e5ed0;
+    --litecharcoal: #254e5e80;
+    --saffron: #E9C46A;
+    --litesaffron: #e4d4aa;
+    --superlitesaffron: #e4d4aa76;
+    --litesandybrown: #f2b27e;
+    --sandybrown: #F4A261;
+    --darksandybrown: #d58e55;
+    --burntsienna: #E76F51;
+    --liteburntsienna: #E76F51;
     
 }
 

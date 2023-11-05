@@ -4,7 +4,7 @@
 }
 
 .rightApp{
-    background-color: var(--bgblue);
+    background-color: var(--charcoal);
     height: 100vh;
     width: 50%;
     flex-basis: 45%;

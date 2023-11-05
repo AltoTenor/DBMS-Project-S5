@@ -1,4 +1,4 @@
-.Navbar{
+/* .Navbar{
     grid-area: nav;
     display: flex;
     align-items: center;
@@ -47,4 +47,4 @@
     .white{
         grid-template-columns: repeat(1,1fr);
     }
-}
+} */

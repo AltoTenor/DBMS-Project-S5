@@ -3,6 +3,9 @@
     padding: 1%;
     padding-left: 0;
     margin: 0 1% 0 0;
+    background-color: rgba(255, 255, 255, 0.668);
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    border-radius: 3px;
 }
 
 .events-heading{
@@ -19,7 +22,6 @@
 }
 
 .white{
-    background-color: #dfdfdf88;
     height: 90vh;
     border-radius: 10px;
     overflow-y: scroll;
@@ -32,6 +34,7 @@
 @media only screen and (max-width: 768px){
     .Events{
         padding-left: 4%;
+        padding-right: 4%;
         padding-right: 4%;
     }
 }

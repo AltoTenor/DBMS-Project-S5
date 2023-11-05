@@ -14,11 +14,13 @@ function BlockOfEvents({EventNo}){
         event_date:"",
         event_name:"",
         event_time:"",
+        event_club:"",
         event_venue:"",
         event_budget:"",
         event_cost:"",
         event_profit:"",
         event_regfee:"",
+        event_image:"",
     })
 
 
@@ -28,8 +30,10 @@ function BlockOfEvents({EventNo}){
             headers:{"Authorization" : `token ${token}`}
         })
         .then(r=>{
+            console.log(r);
             setEvent({
                 ...r.data,
+                "event_image":"",
             })
         })
     }
@@ -49,14 +53,31 @@ function BlockOfEvents({EventNo}){
     function handleSubmit(e){
         e.preventDefault();
         console.log(event);
-        if (event.event_image==null){
-            delete event.event_image;
+
+        const formdata = new FormData();
+        console.log(event.event_image);
+        if (event.event_image!==""){
+            formdata.append("event_image",
+                event.event_image,event.event_image.name
+            );
         }
-        axios.put( `https://nitclub-backend--arshiyahafis.repl.co/events/${EventNo}/`,event,{
+        formdata.append("event_name",event.event_name);
+        formdata.append("event_budget",event.event_budget);
+        formdata.append("event_cost",event.event_cost);
+        formdata.append("event_club",event.event_club);
+        formdata.append("event_date",event.event_date);
+        formdata.append("event_time",event.event_time);
+        formdata.append("event_venue",event.event_venue);
+        formdata.append("event_regfee",event.event_regfee);
+        axios.put( `https://nitclub-backend--arshiyahafis.repl.co/events/${EventNo}/`,formdata,{
             headers:{"Authorization" : `token ${token}`}
         })
         .then(r=>{
-            console.log(r)
+            console.log(r);
+            setTimeout(()=>{
+                window.location.reload();
+            },500)
+
         })
         .catch(e=>console.log(e))
     }
@@ -80,6 +101,15 @@ function BlockOfEvents({EventNo}){
       
         // Use the test() method of the regular expression to check if the inputString matches the pattern
         return datePattern.test(str);
+    }
+
+    function handleImageChange(e){
+        console.log(e.target.files[0]);
+        setEvent({
+            ...event,
+            "event_image":e.target.files[0],
+            }
+        )
     }
 
     return( 
@@ -150,7 +180,7 @@ function BlockOfEvents({EventNo}){
                     value = {event.event_cost} 
             />
             </div>
-            <div className="eventadd-box">
+            {/* <div className="eventadd-box">
                 <label className="eventadd-label" htmlFor='Eprofit'>Event Profit (in ₹)</label> 
                 <input 
                     type="text" 
@@ -160,9 +190,9 @@ function BlockOfEvents({EventNo}){
                     onChange={handleChange} 
                     value = {event.event_profit} 
             />
-            </div>
+            </div> */}
             <div className="eventadd-box">
-                <label className="eventadd-label" htmlFor='Eregfee'>Event Profit (in ₹)</label> 
+                <label className="eventadd-label" htmlFor='Eregfee'>Event Reg Fee (in ₹)</label> 
                 <input 
                     type="text" 
                     className={`eventadd-input ${(event.event_regfee==="")?"":(!isNaN(event.event_regfee))?"eventadd-input-dirty":"eventadd-input-invalid"}  `}
@@ -172,7 +202,17 @@ function BlockOfEvents({EventNo}){
                     value = {event.event_regfee} 
             />
             </div>
-            <button className='addEventBtn' type='submit'  onClick={handleSubmit}> CREATE EVENT  </button>
+            <div className="eventadd-box">
+                <label className="eventadd-label" htmlFor='EImage'>Event Image</label> 
+                <input 
+                    type="file" 
+                    className={`eventadd-input`}
+                    name='event_regfee' 
+                    id="EImage" 
+                    onChange={handleImageChange} 
+            />
+            </div>
+            <button className='addEventBtn' type='submit'  onClick={handleSubmit}> UPDATE EVENT  </button>
         </form>)
 }
 

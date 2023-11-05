@@ -11,36 +11,46 @@ function BlockOfEvents({setTabNumber,warning,setWarning,handleYes,setRegDeleteI,
     // console.log(arr);
 
     const { token } = useAuth();
-    const [objs,setObjs] = useState({});
+    const [clubID,setClubID] = useState([]);
 
-    
+    useEffect( ()=>{
+        axios.get( `https://nitclub-backend--arshiyahafis.repl.co/profile/`,{
+            headers:{"Authorization" : `token ${token}`}
+        })
+        .then(r=>{
+            // console.log(r.data.clubs[0].club_id);
+            setClubID(r.data.clubs[0].club_id);
+        })
+    }
+    ,[])
 
 
     useEffect( ()=>{
-        // console.log(token);
-        axios.get("https://nitclub-backend--arshiyahafis.repl.co/upcoming-events/"
-        ,{
-            headers:{"Authorization" : `token ${token}`}
-        }
-        )
-        .then( (r)=>{
-            // console.log(r);
-            setArr(r.data.map( (obj)=>({
-                    Id:obj.event_id,
-                    Club: obj.event_club,
-                    EventName: obj.event_name,
-                    Date: obj.event_date,
-                    Time: obj.event_time,
-                    Reg_Fee: obj.event_regfee,
-                    Venue: obj.event_venue,
-                    Image: obj.event_image,
-                    NumRegtd: obj.event_students
-                })
-            ))
-        } )
-        .catch((e)=>{
-            console.log(e);
-        }) },[]
+        if (clubID!=""){
+            axios.get(`https://nitclub-backend--arshiyahafis.repl.co/club/${clubID}/events`
+            ,{
+                headers:{"Authorization" : `token ${token}`}
+            }
+            )
+            .then( (r)=>{
+                // console.log(r.data);
+                setArr(r.data.map( (obj)=>({
+                        Id:obj.event_id,
+                        Club: obj.event_club,
+                        EventName: obj.event_name,
+                        Date: obj.event_date,
+                        Time: obj.event_time,
+                        Reg_Fee: obj.event_regfee,
+                        Venue: obj.event_venue,
+                        Image: obj.event_image,
+                        NumRegtd: obj.event_students
+                    })
+                ))
+            } )
+            .catch((e)=>{
+                console.log(e);
+            }) 
+        } },[clubID]
     )
 
     function handleDelete(i){
@@ -52,7 +62,6 @@ function BlockOfEvents({setTabNumber,warning,setWarning,handleYes,setRegDeleteI,
         setEventNo(arr[i].Id);
         setTabNumber(5);
     }
-
 
     return (
         <div className="white">
@@ -73,7 +82,7 @@ function BlockOfEvents({setTabNumber,warning,setWarning,handleYes,setRegDeleteI,
 }
 
 
-export default function ClubEvents({setTabNumber,setEventNo}){
+export default function ClubEvents({setTabNumber,setEventNo,EventNo}){
 
     const [regDeleteI,setRegDeleteI] = useState(0);
     const [arr,setArr] = useState([]);
