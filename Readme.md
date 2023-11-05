@@ -1,7 +1,7 @@
 # DBMS-Project-S5
 # NITClub Event Management System
 
-![Project Image](./nitclub/src/assets/banner.png)
+![Project Image](./src/assets/banner.png)
 
 This repository is dedicated to the front end of the NITClub Event Management System, a semester 5 Database Management System project. The front end is hosted at [https://nitclub-dbms.web.app/login](https://nitclub-dbms.web.app/login) and is built using React, which interacts with the backend using Axios. The project provides features for both students and administrators, including user authentication, event registration, and event management.
 
@@ -27,7 +27,7 @@ The project is hosted on [Firebase](https://firebase.google.com/), which provide
 
 ## React Component Tree
 
-![React Image](./nitclub/src/assets/react.jpg)
+![React Image](./src/assets/react.jpg)
 
 ## Contributors
 
